@@ -1,0 +1,57 @@
+version: '3.8'
+
+networks:
+  smart-home-network:
+    driver: bridge
+
+services:
+  presence-sensor:
+    container_name: presence-sensor
+    image: 'pklimuk/thesis-sensor:latest'
+    environment:
+      - ADDRESS=:8081
+    ports:
+      - '8081:8081'
+    restart: on-failure
+    networks:
+      - smart-home-network
+    command: ["/sensor"]
+  
+  gas-sensor:
+    container_name: gas-sensor
+    image: 'pklimuk/thesis-sensor:latest'
+    environment:
+      - ADDRESS=:8082
+    ports:
+      - '8082:8082'
+    restart: on-failure
+    networks:
+      - smart-home-network
+    command: ["/sensor"]
+  
+  doors-sensor:
+    container_name: doors-sensor
+    image: 'pklimuk/thesis-sensor:latest'
+    environment:
+      - ADDRESS=:8083
+    ports:
+      - '8083:8083'
+    restart: on-failure
+    networks:
+      - smart-home-network
+    command: ["/sensor"]
+  
+  control-station:
+    container_name: control-station
+    image: 'pklimuk/thesis-control-station:latest'
+    environment:
+      - ADDRESS=:8080
+      - PRESENCE_SENSOR_ADDRESS=http://presence-sensor:8081
+      - GAS_SENSOR_ADDRESS=http://gas-sensor:8082
+      - DOORS_SENSOR_URL=http://doors-sensor:8083
+    ports:
+      - '8080:8080'
+    restart: on-failure
+    networks:
+      - smart-home-network
+    command: ["/controlStation"]
