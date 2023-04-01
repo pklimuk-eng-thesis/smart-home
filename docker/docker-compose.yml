@@ -48,7 +48,7 @@ services:
       - ADDRESS=:8080
       - PRESENCE_SENSOR_ADDRESS=http://presence-sensor:8081
       - GAS_SENSOR_ADDRESS=http://gas-sensor:8082
-      - DOORS_SENSOR_URL=http://doors-sensor:8083
+      - DOORS_SENSOR_ADDRESS=http://doors-sensor:8083
     ports:
       - '8080:8080'
     restart: on-failure
