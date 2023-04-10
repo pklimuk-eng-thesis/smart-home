@@ -42,8 +42,8 @@ services:
     command: ["/sensor"]
   
   data-service:
+    container_name: data-service
     image: 'pklimuk/thesis-data-service:latest'
-    image: 'test-data-service'
     environment:
       - ADDRESS=:8087
       - POSTGRES_USER=${POSTGRES_USER}
@@ -72,6 +72,7 @@ services:
       - PRESENCE_SENSOR_ADDRESS=http://presence-sensor:8081
       - GAS_SENSOR_ADDRESS=http://gas-sensor:8082
       - DOORS_SENSOR_ADDRESS=http://doors-sensor:8083
+      - DATA_SERVICE_ADDRESS=http://data-service:8087
     ports:
       - '8080:8080'
     restart: on-failure
