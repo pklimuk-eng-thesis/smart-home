@@ -41,6 +41,30 @@ services:
       - smart-home-network
     command: ["/sensor"]
   
+  smart-bulb:
+    container_name: smart-bulb
+    image: 'pklimuk/thesis-device:latest'
+    environment:
+      - ADDRESS=:8084
+    ports:
+      - '8084:8084'
+    restart: on-failure
+    networks:
+      - smart-home-network
+    command: ["/device"]
+  
+  smart-plug:
+    container_name: smart-plug
+    image: 'pklimuk/thesis-device:latest'
+    environment:
+      - ADDRESS=:8085
+    ports:
+      - '8085:8085'
+    restart: on-failure
+    networks:
+      - smart-home-network
+    command: ["/device"]
+
   data-service:
     container_name: data-service
     image: 'pklimuk/thesis-data-service:latest'
@@ -72,6 +96,8 @@ services:
       - PRESENCE_SENSOR_ADDRESS=http://presence-sensor:8081
       - GAS_SENSOR_ADDRESS=http://gas-sensor:8082
       - DOORS_SENSOR_ADDRESS=http://doors-sensor:8083
+      - SMART_BULB_ADDRESS=http://smart-bulb:8084
+      - SMART_PLUG_ADDRESS=http://smart-plug:8085
       - DATA_SERVICE_ADDRESS=http://data-service:8087
     ports:
       - '8080:8080'
