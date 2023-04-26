@@ -64,6 +64,18 @@ services:
     networks:
       - smart-home-network
     command: ["/device"]
+  
+  ac:
+    container_name: ac
+    image: 'pklimuk/thesis-ac:latest'
+    environment:
+      - ADDRESS=:8086
+    ports:
+      - '8086:8086'
+    restart: on-failure
+    networks:
+      - smart-home-network
+    command: ["/ac"]
 
   data-service:
     container_name: data-service
@@ -98,6 +110,7 @@ services:
       - DOORS_SENSOR_ADDRESS=http://doors-sensor:8083
       - SMART_BULB_ADDRESS=http://smart-bulb:8084
       - SMART_PLUG_ADDRESS=http://smart-plug:8085
+      - AC_ADDRESS=http://ac:8086
       - DATA_SERVICE_ADDRESS=http://data-service:8087
     ports:
       - '8080:8080'
