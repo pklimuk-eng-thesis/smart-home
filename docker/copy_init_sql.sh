@@ -1,0 +1,1 @@
+cp ../../data-service/init_db.sql .
