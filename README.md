@@ -4,16 +4,18 @@ This project is part of my Engineering thesis. It's a smart-home system that all
 
 The system is based on a microservices architecture and consists of several services, which are described below.
 
+<p align="center">
 <img src="./readme_images/system_architecture.jpg"
      alt="System architecture"
      title="System architecture"
      width="660"
-     height="500"
-     style="display: block; margin: 0 auto"/>
+     height="500"/>
+</p>
 
 ## Services
 
 ### Sensors
+
 - Czujnik otwarcia drzwi(door-opening sensor)
 - Czujnik gazu(gas sensor)
 - Czujnik obecności(prsence sensor)
@@ -21,36 +23,43 @@ The system is based on a microservices architecture and consists of several serv
 The repo with sensors logic implementation is [here](https://github.com/pklimuk-eng-thesis/sensor).
 
 ### Smart devices
+
 - Inteligentna żarówka(smart bulb)
 - Inteligentna wtyczka(smart plug)
 
 The repo with smart devices logic implementation is [here](https://github.com/pklimuk-eng-thesis/device).
 
 ### Air conditioning
+
 - Klimatyzacja(air conditioning)
 
 The repo with air conditioning logic implementation is [here](https://github.com/pklimuk-eng-thesis/air-conditioning).
 
 ### Data service
-The service, which is responsible for data management. 
+
+The service, which is responsible for data management.
 
 The code is [here](https://github.com/pklimuk-eng-thesis/data-service).
 
 ### Control station
+
 The "brain" of the system. It's responsible for controlling the whole system.
 
 The code is [here](https://github.com/pklimuk-eng-thesis/control-station).
 
 ### Control panel
+
 The web app, which allows to control the whole system.
 
 The code is [here](https://github.com/pklimuk-eng-thesis/control-panel).
 
 The user home page is presented below.
 
+<p align="center">
 <img src="./readme_images/system-fe.png"
      alt="User home page"
      title="User home page"
      width="841"
      height="450"
-     style="display: block; margin: 0 auto"/>
+     />
+</p>
