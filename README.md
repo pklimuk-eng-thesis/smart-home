@@ -4,7 +4,13 @@ This project is part of my Engineering thesis. It's a smart-home system that all
 
 The system is based on a microservices architecture and consists of several services, which are described below.
 
-<img src="./readme_images/system_architecture.png" alt="System architecture" title="System architecture" width="660" height="500"/>
+<img src="./readme_images/system_architecture.jpg"
+     alt="System architecture"
+     title="System architecture"
+     width="660"
+     height="500"
+     style="display: block; margin: 0 auto"
+     />
 
 ## Services
 
@@ -43,4 +49,9 @@ The code is [here](https://github.com/pklimuk-eng-thesis/control-panel).
 
 The user home page is presented below.
 
-<img src="./readme_images/system-fe.png" alt="User home page" title="User home page" width="747" height="400"/>
+<img src="./readme_images/system-fe.png"
+     alt="User home page"
+     title="User home page"
+     width="841"
+     height="450"
+     style="display: block; margin: 0 auto"/>
