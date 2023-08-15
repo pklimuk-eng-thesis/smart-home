@@ -9,8 +9,7 @@ The system is based on a microservices architecture and consists of several serv
      title="System architecture"
      width="660"
      height="500"
-     style="display: block; margin: 0 auto"
-     />
+     style="display: block; margin: 0 auto"/>
 
 ## Services
 
